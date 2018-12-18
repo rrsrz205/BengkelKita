@@ -1,0 +1,85 @@
+*{
+	box-sizing: border-box;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	color: #004208;
+}
+
+html, body{
+	background-color: #84C68C;
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+	text-align: center;
+	margin: 3em auto 1em auto;
+	color: #004208;
+}
+
+.loginContainer{
+	text-align: center;
+	vertical-align: middle;
+}
+
+.loginBox{
+	background-color: #52A55C;
+	width: 300px;
+	height: 150px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.textField{
+	padding: 0px 0px 0px 3px;
+	margin: 10px;
+}
+
+.btn{
+	background-color: #004208;
+	border: none;
+	width: 100px;
+	height: 30px;
+	margin-top: 5px;
+	color: white;
+}
+
+.nav{
+	font-size: 1.5em;
+	font-weight: bold;
+	background-color: #004208;
+	height: 50px;
+}
+
+.nav li{
+	display: inline;
+}
+
+.nav a{
+	display: inline-block;
+	padding: .5em;
+	color: white;
+	text-decoration: none;
+}
+
+.nav a:hover{
+	background-color: #84C68C;
+}
+
+.container{
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 1.5em;
+}
+
+.profPic{
+	display: block;
+	border-radius: 50%;
+	size: 200px;
+	margin: 0 auto;
+}
+
+.profName{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 3em;
+}
