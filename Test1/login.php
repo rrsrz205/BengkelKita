@@ -9,12 +9,18 @@
 
 	<body>
 		<div class="loginContainer">
-			<h1>BengkelKita</h1>
+			<h1 class="loginTitle">BengkelKita</h1>
 			<div class="loginBox">
 				<form method="POST" action="">
-					<input name="Email" class="textField" placeholder="Email">
-					<input type="password" class="textField" name="pass" placeholder="Password">
-					<input type="submit" name="sub" class="btn" value="Login">
+					<div>
+						<input name="Email" class="textField loginTF" placeholder="Email">
+					</div>
+					<div>
+						<input type="password" class="textField loginTF" name="pass" placeholder="Password">
+					</div>
+					<div>
+						<input type="submit" name="sub" class="btn btnLogin" value="Login">
+					</div>
 				</form>
 			</div>
 		</div>

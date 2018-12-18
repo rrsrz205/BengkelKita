@@ -48,6 +48,9 @@
 			</nav>
 		</header>
 		<section class="container">
+			<div class="pageTitle">
+				Profile
+			</div>
 			<form action="" method="get">
 				<img src="img/pic_profile.png" alt="This is your profile picture." class="profPic">
 				<div class="profName">

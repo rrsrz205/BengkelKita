@@ -1,64 +1,66 @@
 <!DOCTYPE HTML>
-<HTML>
+<html>
 	<head>
+		<title>Work Order</title>
 		<meta name="viewpoint" content="width=device-width" , initial-scale=1 , shrink-to-fit=no , charset="utf-8" >
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="styles.css">
-		<title>Login</title>
 	</head>
+
 	<body >
-
-	<div class="isi">
-		<div Class="Header">
-				
-			
-				<h1>Work Order</h1>
-						<!--<span>Create Work Order </span>-->
-
-						<nav class="navbar navbar-inverse">
-							<div class="container-fluid">
-								<div class="navbar-header">
-									<a class="navbar-brand" href="Customer.php">Work Order</a>
-								</div>
-									<ul class="nav navbar-nav">
-										<li><a href="MainForm.php">Home</a></li>
-										<li><a  href="invetory.php">Inventory</a></li>
-										<li class="active"><a  href="workorder.php">Work Order</a></li>
-										<li><a  href="staff.php">Staff</a></li>
-										<li><a  href="Customer.php">Customer</a></li>
-									</ul>
-									<ul class="nav navbar-nav navbar-right">
-										<li><a href="function/clear.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-								</ul>
-							</div>
-						</nav>
-
-						<div id="MainWO">
-
-
-							
-						</div>
-
+		<header>
+			<nav class="nav">
+				<ul>
+					<li>
+						<a href="profile.php">
+							Profile
+						</a>
+					</li>
+					<li>
+						<a href="workOrder.php">
+							Work Order
+						</a>
+					</li>
+					<li>
+						<a href="inventory.php">
+							Inventory
+						</a>
+					</li>
+					<li>
+						<a href="customer.php">
+							Customer
+						</a>
+					</li>
+					<li>
+						<a href="staff.php">	
+							Staff
+						</a>
+					</li>
+					<li>
+						<a href="function/clear.php">
+							<span class="glyphicon glyphicon-log-in" style="color: white">
+							</span>
+							Logout
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section class="container">
+			<div class="pageTitle">
+				Work Order
 			</div>
-		</div>	
+		</section>
 	</body>
 
 	<?php
+		session_start();
 
-session_start();
+		if ($username = $_SESSION['user']) {
 
-if ($username = $_SESSION['user']) {
-
-} else {
-	header('location:login.php');
-}
-
-
-
-
-?>
-
-
-
-</HTML>
+		} else {
+			header('location:login.php');
+		}
+	?>
+</html>
 
