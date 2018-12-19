@@ -99,8 +99,9 @@
 
 			if ($username = $_SESSION['user']) {
 
-			} else
+			} else{
 				header("location:login.php");
+			}}
 		?>
 	</body>
 </html>
