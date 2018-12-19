@@ -1,4 +1,4 @@
-<?phpsession_start();?>
+<?php session_start(); ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -19,7 +19,9 @@
 						<input type="password" class="textField loginTF" name="pass" placeholder="Password">
 					</div>
 					<div>
-						<input type="submit" name="sub" class="btn btnLogin" value="Login">
+						<button type="submit" name="sub" class="btn btnLogin">
+							Login
+						</button>
 					</div>
 				</form>
 			</div>
@@ -48,7 +50,7 @@
 
 
 				if ($Username == "" && $Password == "")
-					echo "<p class= login_text ><b>Harus di isi!</b></p>";
+					echo "<p class= login_text ><b>Harus di Isi!</b></p>";
 				else if ($Username == $louser && $Password == $pasuser) {
 					session_start();
 					$_SESSION['user'] = $nama_user;
@@ -56,7 +58,7 @@
 					die();
 					session_close();
 				} else {
-					echo "<p class=login_text>Salah Id / Password (Case Sensivite)</p>";
+					echo "<p class=login_text>Salah ID / Password (Case Sensivite)</p>";
 				}
 			}
 		?>

@@ -45,7 +45,7 @@ html, body{
 .btn{
 	background-color: #004208;
 	border: none;
-	border-radius: 3em;
+	border-radius: 2em;
 	color: white;
 }
 
@@ -108,4 +108,9 @@ html, body{
 	font-weight: bolder;
 	font-size: 3em;
 	border-bottom: 5px solid #004208;
+}
+
+.btnA{
+	color: white;
+	text-decoration: none;
 }
