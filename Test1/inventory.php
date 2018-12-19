@@ -90,21 +90,18 @@
 						<td><?= $row['ItemPrice']; ?></td>
 						<td>
 							<span>
-								<a class="btnA" href="function/edit_item.php?lel=<?= $row['ItemID'] ?>">
-									<button class="btn">
-										Edit
-									</button>
-								</a>
+							<button class="btn"><a class="btnA" href="function/edit_item.php?lel=<?= $row['ItemID'] ?>">Edit</a></button>	
 							</span>
 							<span>
-								<a class="btnA" href="function/del_item.php?lel=<?= $row['ItemID'] ?>">
-									<button class="btn">
-										Delete
-									</button>
-								</a>
+							<button class="btn"><a class="btnA" href="function/del_item.php?lel=<?= $row['ItemID'] ?>">Delete</a></button>
+										
 							</span>	
 						</td>
 					</tr>
+						<?php
+						}
+						?>
+					
 				</tbody>
 			</table>
 		</section>
@@ -118,7 +115,7 @@
 
 			} else{
 				header("location:login.php");
-			}}
+			}
 			
 		?>
 	</body>
