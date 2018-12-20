@@ -1,18 +1,12 @@
 <h1>
-<center>
-<?php
+    <center>
+        <?php
+        session_start();
 
-session_start();
+        $username = $_SESSION['user'];
 
-$username = $_SESSION['user'];
-
-echo "Anda Telah Login ", $username;
-echo "<meta http-equiv = 'refresh' content='2 url=../MainForm.php'>";
-
-
-
-
-
-?>
-</center>
+        echo "Anda Telah Login ", $username;
+        echo "<meta http-equiv = 'refresh' content='2 url=../profile.php'>";
+        ?>
+    </center>
 </h1>

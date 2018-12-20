@@ -1,76 +1,131 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Tambah Inventory</title>
 		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="../styles.css">
-		<title>Inventory</title>
 	</head>
+
 	<body>
-	<div id="Mainitem">
+		<header>
+			<nav class="nav">
+				<ul>
+					<li>
+						<a href="../profile.php">
+							Profile
+						</a>
+					</li>
+					<li>
+						<a href="../workOrder.php">
+							Work Order
+						</a>
+					</li>
+					<li>
+						<a href="../inventory.php">
+							Inventory
+						</a>
+					</li>
+					<li>
+						<a href="../customer.php">
+							Customer
+						</a>
+					</li>
+					<li>
+						<a href="../staff.php">	
+							Staff
+						</a>
+					</li>
+					<li>
+						<a href="function/clear.php">
+							<span class="glyphicon glyphicon-log-in" style="color: white">
+							</span>
+							Logout
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-	<form action="" method="post" id="inputitem">
+		<section class="container">
+			<div class="pageTitle">
+				Tambah Inventory
+			</div>
+		</section>
 
-	Item ID:</br> <input  type="text" name="itemid" style="width: 200px"></br>
-	Item Name:</br> <input  type="text" name="itemname" style="width: 200px"></br>
-	Item Stock:</br>  <input  type="text" name="itemstock" style="width: 200px"></br>
-	Item Price:</br>  <input  type="number" name="itemprice" style="width: 200px"></br>
-	Item Description:</br> <textarea name="itemdescription" form="inputitem" style="width: 200px"></textarea></br>
-	<input type="submit" name="sub" value="Submit" id="buttonLoginCustom" style="margin-top: 5px;">
+		<section class="loginContainer">
+			<form action="" method="post" id="inputitem">
+				<div class="contentText">
+					Item ID:
+				</div>
+				<div>
+					<input class="formTF"  type="text" name="itemid">
+				</div>
+				<div class="contentText">
+					Item Name:
+				</div>
+				<div>
+					<input class="formTF" type="text" name="itemname">
+				</div>
+				<div class="contentText">
+					Item Stock:
+				</div>
+				<div>
+					<input class="formTF" type="text" name="itemstock">	
+				</div>
+				<div class="contentText">
+					Item Price:
+				</div>
+				<div>
+					<input class="formTF" type="number" name="itemprice">
+				</div>
+				<div class="contentText">
+					Item Description:
+				</div>
+				<div>
+					<input class="formTF" name="itemdescription" form="inputitem" type="text">
+				</div>
+				<div>
+					<button class="but btnSubmit" type="submit" name="sub">
+						Tambah
+					</button>
+				</div>
+			</form>
+		</section>
 
-	</form>
+		<?php
+			if (isset($_POST['sub'])) {
+			error_reporting(E_ALL ^ E_NOTICE);
+			error_reporting(E_ERROR | E_PARSE);
 
-	<?php
+			include "../function/DBconnect.php";
 
-	if (isset($_POST['sub'])) {
-	error_reporting(E_ALL ^ E_NOTICE);
-	error_reporting(E_ERROR | E_PARSE);
+			$id = $_POST['itemid'];
+			$name = $_POST['itemname'];
+			$stock = $_POST['itemstock'];
+			$price = $_POST['itemprice'];
+			$desc = $_POST['itemdescription'];
 
-	include "../function/DBconnect.php";
+			$sql = "INSERT INTO ITEM(ItemID,ItemName,ItemStock,ItemPrice,ItemDescription) VALUES ('$id','$name','$stock','$price','$desc')";
+			$res = mysqli_query($con, $sql);
 
+			if ($res) {
+			echo "Data Berhasil Disimpan !";
+			echo "<meta http-equiv = 'refresh' content=' 2 url=../inventory.php' >";
 
-	$id = $_POST['itemid'];
-	$name = $_POST['itemname'];
-	$stock = $_POST['itemstock'];
-	$price = $_POST['itemprice'];
-	$desc = $_POST['itemdescription'];
+			} else
+			echo "Data Tidak Bisa Disimpan ! ";
+			}
+		?>
+		
+		<?php
+			error_reporting(E_ALL ^ E_NOTICE);
 
-	$sql = "INSERT INTO ITEM(ItemID,ItemName,ItemStock,ItemPrice,ItemDescription) VALUES ('$id','$name','$stock','$price','$desc')";
-	$res = mysqli_query($con, $sql);
+			session_start();
 
-	if ($res) {
-	echo "Data Berhasil di simpan !";
-	echo "<meta http-equiv = 'refresh' content=' 2 url=../invetory.php' >";
+			if ($username = $_SESSION['user']) {
 
-	} else
-	echo "Data Tidak bisa di Simpan ! ";
-
-
-
-
-	}
-
-
-	?>
-
-
-
-	</div>
-
-	</div>
-
-	</div>
-	<?php
-	error_reporting(E_ALL ^ E_NOTICE);
-
-	session_start();
-
-	if ($username = $_SESSION['user']) {
-
-	} else
-	header("location:../login.php");
-
-
-	?>
-
+			} else
+			header("location:../login.php");
+		?>
 	</body>
 </html>

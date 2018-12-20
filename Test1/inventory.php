@@ -45,6 +45,7 @@
 				</ul>
 			</nav>
 		</header>
+		
 		<section class="container">
 			<div class="pageTitle">
 				Inventory
@@ -53,7 +54,7 @@
 
 		<section class="container">
 			<a href="function/tambah_item.php">
-				<button class="btn">
+				<button class="but">
 					Tambah Item
 				</button>
 			</a>
@@ -89,19 +90,20 @@
 						<td><?= $row['ItemStock']; ?></td>
 						<td><?= $row['ItemPrice']; ?></td>
 						<td>
-							<span>
-							<button class="btn"><a class="btnA" href="function/edit_item.php?lel=<?= $row['ItemID'] ?>">Edit</a></button>	
-							</span>
-							<span>
-							<button class="btn"><a class="btnA" href="function/del_item.php?lel=<?= $row['ItemID'] ?>">Delete</a></button>
-										
-							</span>	
+							<a class="btnA" href="function/edit_item.php?lel=<?= $row['ItemID'] ?>">
+								<button class="but">
+									Edit
+								</button>
+							<a class="btnA" href="function/del_item.php?lel=<?= $row['ItemID'] ?>">
+								<button class="but">
+									Delete	
+								</button>
+							</a>			
 						</td>
 					</tr>
 						<?php
 						}
 						?>
-					
 				</tbody>
 			</table>
 		</section>
@@ -116,7 +118,6 @@
 			} else{
 				header("location:login.php");
 			}
-			
 		?>
 	</body>
 </html>

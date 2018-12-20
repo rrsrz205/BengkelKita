@@ -13,13 +13,13 @@
 			<div class="loginBox">
 				<form method="POST" action="">
 					<div>
-						<input name="Email" class="textField loginTF" placeholder="Email">
+						<input name="Email" class="loginTF" placeholder="Email">
 					</div>
 					<div>
-						<input type="password" class="textField loginTF" name="pass" placeholder="Password">
+						<input type="password" class="loginTF" name="pass" placeholder="Password">
 					</div>
 					<div>
-						<button type="submit" name="sub" class="btn btnLogin">
+						<button type="submit" name="sub" class="but btnLogin">
 							Login
 						</button>
 					</div>
